@@ -31,12 +31,13 @@ int main(int argc, char *argv[]){
     // initializing every index to point to NULL in array 
     int i;
     for(i = 0; i < 100; i++){
-        ;
         pointer_array[i] = NULL;
     }
 
+
     // each line of txt file will be stored in line 
     char line[100];
+    int count = 0;
     // loops through every line in txt file 
     while(fgets(line, sizeof(line), read_file)){
         // ADD OTHER FUNCTION IN HERE??
@@ -44,14 +45,13 @@ int main(int argc, char *argv[]){
         // word size gets the length of the word so we can index out array of pts 
         int word_size = strlen(line) - 1;
         search_word(pointer_array, word_size, line);
-        
+        count += 1;
+
         // this add whatever is in "line" to the output file 
     }
-
-    print_lists(pointer_array);
-
 
 
     return 0;
 }
+
 

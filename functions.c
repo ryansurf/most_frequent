@@ -4,41 +4,49 @@
 #include "header.h"
 
 
-/* search for node in LL. If the word not in, add it to LL. If it is found,
+/* search for node in LL. If the word not in, add it to LL using add_node(). If it is found,
 increment it's count by 1 */
 void search_word(Node **pointer_array, int index, char *word){
     // should take the head of the ll 
     Node *current = pointer_array[index];
+        // loop through linked list and look for word 
     if(current == NULL){
-        current = (Node*) malloc(sizeof(Node));
+        current = malloc(sizeof(Node));
         current->node_word = word;
         current->counter = 1;
         current->next = NULL;
         pointer_array[index] = current;
         return;
     }else{
-        // loop through linked list and look for word 
+        //If CURRENT is not NULL, we walk through linked list until we find a matching word.
+        // If we dont, we add new node 
         while(current != NULL){
             // compare checks if the strings are equal(return 0) 
-            printf("CURRENT NODE WORD: %s\n", current->node_word);
-            printf("COMPARE WORD: %s\n\n", word);
             int compare = strncmp(current->node_word, word, index);
             if(compare == 0){
                 current->counter++; 
-                return;
+                break;
             }else{
-                printf("ELSE\n");
                 current = current->next;
             }
         }
-    }
-    // allocate mem for a new node if word does not exist in LL 
-    current->next = (Node*) malloc(sizeof(Node));
-    current->next->counter = 0;
-    current->next->node_word = word;
-    current->next->next = NULL;
-    
+        //If we got to this point, it means the word is not in the LL. We must add it
+        //add_node(pointer_array, index, word);
+        }
 }
+
+
+
+// Adds a node to a LL at the specified index of the array at the beginning of LL
+void add_node(Node **pointer_array, int index, char *word){
+    //Now we add the new variable
+    Node *currentNode = malloc(sizeof(Node));
+    currentNode->counter = 1;
+    currentNode->node_word = word;
+    currentNode->next = pointer_array[index];
+    pointer_array[index] = currentNode;
+}
+
 
 
 // prints all our linked lists in the array 

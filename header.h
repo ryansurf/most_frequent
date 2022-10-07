@@ -11,3 +11,5 @@ typedef struct node{
 void search_word(Node **pointer_array, int index, char *word);
 
 void print_lists(Node **pointer_array);
+
+void add_node(Node **pointer_array, int index, char *word);
