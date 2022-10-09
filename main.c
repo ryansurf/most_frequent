@@ -4,11 +4,18 @@
 #include "header.h"
 
 
-int main(){
+int main(int argc, char *argv[]){
 
+    // not valid cmd line args 
+    if(argc !=  3){
+        printf("Invalid Input\n");
+        exit(1);
+    }
 
     //opens the txt file for reading
-    FILE *read_text = fopen("test.txt", "r");
+    FILE *read_text = fopen(argv[1], "r");
+    //opens txt file for writing
+    FILE *write_text = fopen(argv[2], "w");
     if(read_text == NULL){
         printf("Cannot open file!\n");
         exit(1);
@@ -34,11 +41,13 @@ int main(){
         if(ptr_array[i] != NULL){
             Node *temp = ptr_array[i];
             while(temp != NULL){
-                printf("WORD: %s\n", temp->node_word);
-                printf("COUNT: %d\n", temp->count);
                 temp = temp->next;
             }
-            printf("\n\n\n\n");
+            int x = get_length(ptr_array, i);
+            bubble_word(ptr_array, i);
+            //print ll to make sure i swapped right
+            char *output;
+            output = *find_rank_lenght(ptr_array, length, rank);
         }
     }
   
