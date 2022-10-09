@@ -41,6 +41,13 @@ int main(int argc, char *argv[]){
     // bubble word every ll of array 
     for(int i = 0; i < 100; i++){
         bubble_word(ptr_array, i);
+        if(i == 6){
+            Node *temp = ptr_array[i];
+            while(temp != NULL){
+                printf("%s->", temp->node_word);
+                temp = temp->next;
+            }
+        }
     }
 
 
