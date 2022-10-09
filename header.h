@@ -1,15 +1,11 @@
-// linked list Node definition 
-typedef struct node{
-    // the word 
+
+
+typedef struct Node{
     char *node_word;
-    // word count 
-    int counter;
-    // next node 
-    struct node *next;
+    int count;
+    struct Node *next;
 } Node;
 
-void search_word(Node **pointer_array, int index, char *word);
+void check_word(Node **ptr_array, char *word);
 
-void print_lists(Node **pointer_array);
-
-void add_node(Node **pointer_array, int index, char *word);
+void add_node(Node **ptr_array, char *word);
