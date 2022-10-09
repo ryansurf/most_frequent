@@ -13,9 +13,10 @@ int main(int argc, char *argv[]){
     }
 
     //opens the txt file for reading
-    FILE *read_text = fopen(argv[1], "r");
+    FILE *read_text = fopen("shakespeare-cleaned5.txt", "r");
+    FILE *read_input = fopen(argv[1], "r");
+    FILE *out_file = fopen(argv[2], "w");
     //opens txt file for writing
-    FILE *write_text = fopen(argv[2], "w");
     if(read_text == NULL){
         printf("Cannot open file!\n");
         exit(1);
@@ -36,20 +37,48 @@ int main(int argc, char *argv[]){
         char *temp_word = strdup(word);
         check_word(ptr_array, temp_word);
     }
-
-    for(int i = 0; i < 10; i++){
-        if(ptr_array[i] != NULL){
-            Node *temp = ptr_array[i];
-            while(temp != NULL){
-                temp = temp->next;
-            }
-            int x = get_length(ptr_array, i);
-            bubble_word(ptr_array, i);
-            //print ll to make sure i swapped right
-            char *output;
-            output = *find_rank_lenght(ptr_array, length, rank);
-        }
+   
+    // bubble word every ll of array 
+    for(int i = 0; i < 100; i++){
+        bubble_word(ptr_array, i);
     }
+
+
+    // read from input file, assign LENGTH and RANK
+    char line[50];
+    while(fgets(line, sizeof(line), read_input) != NULL){
+        char *temp_line = strdup(line);
+        //get LENGTH and INPUT
+        char *token = strtok(temp_line, " ");
+        char *length;
+        char *rank;
+        int count = 0;
+
+        while(token != NULL){
+            if(count == 0){
+                length = token;
+            }else{
+                rank = token;
+            }
+            token = strtok(NULL, " ");
+            count++;
+        }
+
+        char *remaining1;
+        long length_int;
+        length_int = strtol(length, &remaining1, 10);
+
+        char *remaining2;
+        long rank_int;
+        rank_int = strtol(rank, &remaining2, 10);
+
+        // NOW we have length and rank
+         char *output = find_rank_length(ptr_array, length_int, rank_int - 1);
+         fprintf(out_file, "%s\n", output);
+
+    }
+
+
   
 
     return 0;

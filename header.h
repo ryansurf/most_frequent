@@ -16,4 +16,4 @@ int get_length(Node **ptr_array, int index);
 
 void bubble_word(Node **ptr_array, int index);
 
-char *find_rank_lenght(Node **ptr_array, int length, int rank);
+char *find_rank_length(Node **ptr_array, int length, int rank);

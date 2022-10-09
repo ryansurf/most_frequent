@@ -86,18 +86,18 @@ int get_length(Node **ptr_array, int index){
 }
 
 // walks through linked list to find rank
-char *find_rank_lenght(Node **ptr_array, int length, int rank){
-    Node *current = ptr_array[length];
-    int rank_counter = 0;
-    //if the length does not exist
-    while(current != NULL){
-        rank_counter++;
-        if(rank_counter == rank){
-            return current->node_word;
-            current = current->next;
+char *find_rank_length(Node **ptr_array, int length, int rank){
+    int count = 0;
+    Node *temp = ptr_array[length];
+
+    while(temp != NULL){
+        if(count == rank){
+            char *ret = strdup(temp->node_word);
+            return ret;
         }
+        count++;
+        temp = temp->next;
     }
-    // if ll is NULL or there is no word of that length 
-    char *out = "-";
-    return out;
+    char *ret = "-";
+    return ret;
 }
