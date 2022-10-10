@@ -63,15 +63,27 @@ void bubble_word(Node **ptr_array, int index){
     int length = get_length(ptr_array, index);
     for(int i = 0; i < length; i++){
         Node *current = ptr_array[index];
+        //Sort by occurence
         while(current->next != NULL){
-            if(strcmp(current->node_word, current->next->node_word) > 0){
+            // for lexograpgic
+            if(current->count < current->next->count){
                 swap(current, current->next);
+                swaps++;
             }
             current = current->next;
         }
+        // sort by lexograpgic of same occurence 
+    }
+    for(int i = 0; i < length; i++){
+        Node *current = ptr_array[index];
+        while(current->next != NULL){
+            if(strcmp(current->node_word, current->next->node_word) > 0 && current->count == current->next->count){
+                swap(current, current->next);
+             }
+             current = current->next;
+        }
     }
     
-
 }
 
 // gets length of linked list 

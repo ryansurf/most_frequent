@@ -42,17 +42,14 @@ int main(int argc, char *argv[]){
     // bubble word every ll of array 
     for(int i = 0; i < 100; i++){
         bubble_word(ptr_array, i);
-        if(i == 6){
+        if(ptr_array[i] != NULL){
             Node *temp = ptr_array[i];
-            while(temp != NULL){
-                printf("%s->", temp->node_word);
+            while(temp->next != NULL){
+                printf("%s->\n", temp->node_word);
+                printf("COUNT: %d\n", temp->count);
                 temp = temp->next;
-                if(counter == 30){
-                    break;
-                    return 0;
-                }
-                counter ++;
             }
+            printf("\n\n");
         }
     }
 
@@ -87,7 +84,7 @@ int main(int argc, char *argv[]){
 
         // NOW we have length and rank
          char *output = find_rank_length(ptr_array, length_int, rank_int - 1);
-         fprintf(out_file, "%s\n", output);
+         fprintf(out_file, "%s", output);
 
     }
 
