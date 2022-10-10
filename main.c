@@ -38,6 +38,7 @@ int main(int argc, char *argv[]){
         check_word(ptr_array, temp_word);
     }
    
+   int counter = 0;
     // bubble word every ll of array 
     for(int i = 0; i < 100; i++){
         bubble_word(ptr_array, i);
@@ -46,6 +47,11 @@ int main(int argc, char *argv[]){
             while(temp != NULL){
                 printf("%s->", temp->node_word);
                 temp = temp->next;
+                if(counter == 30){
+                    break;
+                    return 0;
+                }
+                counter ++;
             }
         }
     }
