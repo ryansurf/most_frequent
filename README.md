@@ -11,7 +11,7 @@ In the input text file, each line corresponds to a new query, with is a pair of 
 for the fourth mosr frequent word of length 9(rank 3 correspods to 4 because we take 0 into account). The output for each line of the correspondin word. \
 If the input file is:  \
     ```
-    6 3  \
+    6 3  <\br>
     10 0
     9 2
     8 14
