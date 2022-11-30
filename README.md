@@ -63,3 +63,12 @@ So "glucester" is the most frequent word of 10 letters, etc. "Business" and "per
 because ot comes first lexographically.
 
 ## How to install and run project
+
+Download all the files and keep them in the same directory. Run "make" to compile the code: \
+    ```
+    make
+    ``` \
+After the code is compiled, an executable named "bard" is made. Two arguments are required: an input text file and output text file. \
+    ```
+    ./bard input.txt output.txt
+    ``` \
