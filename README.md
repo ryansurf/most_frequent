@@ -35,13 +35,30 @@ If the input file is:  \
     ```
     \
 The output file is:  \
-    ```
+     ```
     father
+    ```
+    \
+    ```
     gloucester
+    ``` 
+    \
+    ```
     messenger
+    ```
+    \
+    ```
     business
+    ```
+    \
+    ```
     personal
     ```
+    \
+    ```
+    -
+    ```
+    \
 So "glucester" is the most frequent word of 10 letters, etc. "Business" and "personal" have the same frequency of 230, but we output "buisness"
 because ot comes first lexographically.
 
