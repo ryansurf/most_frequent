@@ -60,7 +60,7 @@ The output file is:  \
     ```
     \
 So "glucester" is the most frequent word of 10 letters, etc. "Business" and "personal" have the same frequency of 230, but we output "buisness"
-because ot comes first lexographically.
+because ot comes first lexographically. The last output line, "-", means that LENGTH and RANK does not exist.
 
 ## How to install and run project
 
