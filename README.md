@@ -71,4 +71,4 @@ Download all the files and keep them in the same directory. Run "make" to compil
 After the code is compiled, an executable named "bard" is made. Two arguments are required: an input text file and output text file. \
     ```
     ./bard input.txt output.txt
-    ``` \
+    ``` 
