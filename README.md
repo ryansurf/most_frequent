@@ -9,9 +9,9 @@ provided words: For any word length "L" and number "K", what is the Kth most fre
 
 In the input text file, each line corresponds to a new query, with is a pair of numbers(LENGTH RANK). For example, if the line of input is "9 3" we look
 for the fourth mosr frequent word of length 9(rank 3 correspods to 4 because we take 0 into account). The output for each line of the correspondin word. \
-If the input file is: \
+If the input file is:  \
     ```
-    6 3
+    6 3  \
     10 0
     9 2
     8 14
